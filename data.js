@@ -1,6 +1,6 @@
 const RESTAURANT_STATUS = {
   'Bazooka':           true  ,    
-  'Karam El Sham':     true   ,
+  'Karam El Sham':     false   ,
 
   'B Laban':           true  ,
   
