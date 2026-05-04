@@ -15,10 +15,11 @@ const RESTAURANT_STATUS = {
   'Krebs':             true  , 
 
   'Sliceno'  :           true    ,
+  'Fan w Tarab':          true  ,
 };
 const WA='201277092892', PAY_NUM='01024130987';
-const BL={'Bazooka':'بازوكا','Karam El Sham':'كرام الشام','B Laban':'B لبن','Wahmy Burger':'وهمي برجر','Koshary Al Khedewy':'كشري الخديوي','Hawawshi Al Refaie':'حواوشي الرفاعي','Saadaawy Burger':'سعداوي برجر','Krebs':'كريبز','Sliceno':'سلايزينو',};
-const BRANDS=['Bazooka','Karam El Sham','B Laban','Wahmy Burger','Koshary Al Khedewy','Hawawshi Al Refaie','Saadaawy Burger','Krebs','Sliceno',];
+const BL={'Bazooka':'بازوكا','Karam El Sham':'كرام الشام','B Laban':'B لبن','Wahmy Burger':'وهمي برجر','Koshary Al Khedewy':'كشري الخديوي','Hawawshi Al Refaie':'حواوشي الرفاعي','Saadaawy Burger':'سعداوي برجر','Krebs':'كريبز','Sliceno':'سلايزينو','Fan w Tarab':'فن وطرب',};
+const BRANDS=['Bazooka','Karam El Sham','B Laban','Wahmy Burger','Koshary Al Khedewy','Hawawshi Al Refaie','Saadaawy Burger','Krebs','Sliceno','Fan w Tarab',];
 
 const MENU=[
   { id: 1, brand: 'Bazooka', n: 'بازوكا جولدن سنايبر بوكس', d: '3قطع فرايد تشيكن بدون اجنحه . باكيت فرايز . كلوسلو وسط . 1مشروب . خبز', p: 265, img: './img/جولد سنيبر.jpeg' },
@@ -616,4 +617,36 @@ const MENU=[
   {id: 741, brand: 'Sliceno', n: 'إضافة 100 جرام دجاج', p: 82, d: '', e: '🍗', img: './img/اضافات فراخ.jpeg'},
   {id: 742, brand: 'Sliceno', n: 'إضافة 100 جرام لحم', p: 92, d: 'ببروني أو لحم مفروم أو سجق أو ميكس الكل', e: '🥩', img: './img/اضافات سحق.jpeg',},
    //  سلايزينوا===
+  //  فن وطرب====
+  {id: 743, brand: 'Fan w Tarab', category: 'سندوتشات', n: 'كفتة', p: 75, d: '', e: '🥙', img: './img/سندوتش كفته.jpeg',},
+  {id: 744, brand: 'Fan w Tarab', category: 'سندوتشات', n: 'طرب', p: 85, d: '', e: '🥙', img: './img/سندوتش طرب.jpeg',},
+  {id: 745, brand: 'Fan w Tarab', category: 'سندوتشات', n: 'طرب دبل', p: 160, d: '', e: '', img: './img/سندوتش طرب.jpeg',},
+  {id: 746, brand: 'Fan w Tarab', category: 'سندوتشات', n: 'شيش', p: 75, d: '', e: '🥙', img: './img/سندوتش شيش.jpeg',},
+  {id: 747, brand: 'Fan w Tarab', category: 'سندوتشات', n: 'حواوشي', p: 65, d: '', e: '🥙', img: './img/حواوشي خلطه اسكندراني.jpeg',},
+
+  // بوكسات
+  {id: 748, brand: 'Fan w Tarab', category: 'بوكسات', n: 'بوكس 4 (كفتة و حواوشي و شيش)', p: 257, d: '', e: '📦', img: './img/بوكس 4كفته حوواوشي و شيش.jpeg',},
+  {id: 749, brand: 'Fan w Tarab', category: 'بوكسات', n: 'بوكس 4 (طرب)', p: 310, d: '', e: '', img: './img/بوكس 4طرب.jpeg',},
+  {id: 750, brand: 'Fan w Tarab', category: 'بوكسات', n: 'بوكس 8 (كفتة و حواوشي و شيش)', p: 500, d: '', e: '📦', img: './img/بوكس8كفته حواوشي شيش.jpeg',},
+  {id: 751, brand: 'Fan w Tarab', category: 'بوكسات', n: 'بوكس 8 (طرب)', p: 590, d: '', e: '📦', img: './img/بوكس 8طرب.jpeg',},
+  {id: 752, brand: 'Fan w Tarab', category: 'بوكسات', n: 'بوكس 10 (كفتة و حواوشي و شيش)', p: 640, d: '', e: '📦', img: './img/بوكس 8طرب.jpeg',},
+  {id: 753, brand: 'Fan w Tarab', category: 'بوكسات', n: 'بوكس 10 (طرب)', p: 740, d: '', e: '📦', img: './img/بوكس 8طرب.jpeg',},
+
+  // وجبات
+  {id: 754, brand: 'Fan w Tarab', category: 'وجبات', n: 'وجبة ربع فراخ', p: 110, d: 'أرز بسمتي + سلطة + عيش + طحينة', e: '🍗', img: './img/وجبه الربع فراخ.jpeg',},
+  {id: 755, brand: 'Fan w Tarab', category: 'وجبات', n: 'وجبة كفتة', p: 170, d: '4 كفتة + أرز بسمتي + سلطة + عيش + طحينة', e: '🥩', img: './img/وجبت كفته.jpeg',},
+  {id: 756, brand: 'Fan w Tarab', category: 'وجبات', n: 'وجبة شيش', p: 110, d: '4 شيش + أرز بسمتي + سلطة + عيش + طحينة', e: '', img: './img/وجبه شيش.jpeg',},
+  {id: 757, brand: 'Fan w Tarab', category: 'وجبات', n: 'وجبة ميكس', p: 165, d: 'ربع فراخ + 2 كفتة + أرز + سلطة + عيش + طحينة', e: '🍽️', img: './img/وجبت ميكس.jpeg',},
+  {id: 758, brand: 'Fan w Tarab', category: 'وجبات', n: 'وجبة ميكس مشاوي', p: 240, d: 'ربع فراخ + 1 طرب + 2 كفتة + أرز + سلطة + عيش + طحينة', e: '️', img: './img/وجه ميكس مشاوي.jpeg',},
+  {id: 759, brand: 'Fan w Tarab', category: 'وجبات', n: 'وجبة مشكل مشاوي', p: 275, d: 'ربع فراخ + 2 طرب + 2 شيش + أرز + سلطة + عيش + طحينة', e: '🍽️', img: './img/وجه مشكل مشاوي.jpeg',},
+
+  // إضافات
+  {id: 760, brand: 'Fan w Tarab', category: 'إضافات', n: 'ويسكي', p: 20, d: '', e: '🥤', img: './img/logo fam w tarb.jpeg',},
+  {id: 761, brand: 'Fan w Tarab', category: 'إضافات', n: 'شيبسي', p: 25, d: '', e: '🧀', img: './img/logo fam w tarb.jpeg',},
+  {id: 762, brand: 'Fan w Tarab', category: 'إضافات', n: 'مشروب غازي', p: 30, d: '', e: '🥤', img: './img/logo fam w tarb.jpeg',},
+  {id: 763, brand: 'Fan w Tarab', category: 'إضافات', n: 'مياة صغيرة', p: 20, d: '', e: '💧', img: './img/logo fam w tarb.jpeg',},
+  {id: 764, brand: 'Fan w Tarab', category: 'إضافات', n: 'باكيت بطاطس', p: 30, d: '', e: '🍟', img: './img/باكيت بطاطس .jpeg',},
+  {id: 765, brand: 'Fan w Tarab', category: 'إضافات', n: 'سلطة خضراء', p: 15, d: '', e: '', img: './img/‏‏سلطه خضراء - نسخة.jpeg',},
+  {id: 766, brand: 'Fan w Tarab', category: 'إضافات', n: 'طحينة', p: 10, d: '', e: '🥣', img: './img/فن وطرب  طحينه.jpeg',},
+  // فن وطرب==
 ];
