@@ -234,7 +234,7 @@ function fabConfirm(){
 
 
 // ===== RECEIPT =====
-const brandEmojis={'Bazooka':'🍗','Karam El Sham':'🥙','B Laban':'🍮','Wahmy Burger':'🍔','Koshary Al Khedewy':'🥘​','Hawawshi Al Refaie':'🫓​','Saadaway Burger':'🍔​','Krebs':'🍕','Sliceno':'🍕'};
+const brandEmojis={'Bazooka':'🍗','Karam El Sham':'🥙','B Laban':'🍮','Wahmy Burger':'🍔','Koshary Al Khedewy':'🥘​','Hawawshi Al Refaie':'🫓​','Saadaway Burger':'🍔​','Krebs':'🍕','Sliceno':'🍕','Fan w Tarab':'🍔'};
 
 function getDeliveryFee(address) {
   const ad = address.toLowerCase();
