@@ -238,15 +238,32 @@ const brandEmojis={'Bazooka':'🍗','Karam El Sham':'🥙','B Laban':'🍮','Wah
 
 function getDeliveryFee(address) {
   const ad = address.toLowerCase();
-  if (ad.includes('حي 12') || ad.includes('الحي 12')) return 20;
-  if (ad.includes('حي 14') || ad.includes('الحي 14')) return 25;
-  if (ad.includes('حي 15') || ad.includes('الحي 15')) return 30;
-  if (ad.includes('حي 16') || ad.includes('الحي 16')) return 35;
-  if (ad.includes('مجاورة 13') || ad.includes('مجاوره 13')) return 40;
-  if (ad.includes('مجاورة 14') || ad.includes('مجاوره 14')) return 45;
-  if (ad.includes('مجاورة 15') || ad.includes('مجاوره 15')) return 50;
-  if (ad.includes('حي الاندلس ') || ad.includes('حي الاندلس')) return 10;
-  return 40;
+ if (!ad) return 40; // سعر افتراضي لو العنوان فارغ
+
+  // 1. حي الأندلس (سعر ثابت ومميز)
+  if (ad.includes('الاندلس') || ad.includes('اندلس')) return 70;
+
+  // 2. استخراج نوع المنطقة والرقم من النص
+  // يدعم: حي، الحي، مجاورة، مجاوره (مع أو بدون مسافة قبل الرقم)
+  const match = ad.match(/(?:الحي|حي|المجاورة|مجاورة|المجاوره|مجاوره)\s*(\d+)/);
+
+  if (match) {
+    const num = parseInt(match[1], 10);
+    const isMajawara = match[0].includes('مجاور');
+
+    if (isMajawara) {
+      // المجاورات (تم ترتيب الشروط من الأعلى للأقل لتجنب تداخل الأرقام 30 و 66)
+      if (num >= 66 && num <= 79) return 50;
+      if (num >= 30 && num < 66)  return 40;
+      if (num >= 1  && num < 30)  return 35;
+    } else {
+      // الأحياء (من 10 لـ 20 السعر واحد، تم دمج الفترتين)
+      if (num >= 10 && num <= 20) return 50;
+    }
+  }
+
+  return 40; // سعر افتراضي للعناوين غير المطابقة للقوائم أعلاه
+ 
 }
 function buildReceipt(oid, nm, ph, ad, it, tot, payLbl, notes) {
   const del = getDeliveryFee(ad);
