@@ -331,6 +331,28 @@ function placeOrder(){
 });
 // back end ===
   showSuccess();
+    fetch('https://tayyar-8dc9c-default-rtdb.firebaseio.com/orders.json', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+        name: nm,
+        phone: ph,
+        address: ad,
+        brand: brand,
+        items: it,
+        orderTotal: tot,
+        delivery: getDeliveryFee(ad),
+        service: SERVICE_FEE,
+        grandTotal: tot + getDeliveryFee(ad) + SERVICE_FEE,
+        payment: pay,
+        orderNum: oid,
+        notes: notes,
+        timestamp: Date.now(),
+        status: 'جديد'
+    })
+});
+
+
 }
 
 let deliveryTimer=null;
