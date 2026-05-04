@@ -216,7 +216,7 @@ input:checked + label .checkmark{
   display:block;
 }
 .whatsapp-float {
-    position: fixed; bottom: 25px; right: 25px;
+    position: fixed; bottom: 80px; right: 25px;
     width: 62px; height: 62px; background: #25D366;
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
     box-shadow: 10px 4px 14px #05ff60; z-index: 9999;

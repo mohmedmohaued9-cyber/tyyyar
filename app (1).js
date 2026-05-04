@@ -308,6 +308,28 @@ function placeOrder(){
   const payLbl=pay==='online'?'📲 انستاباي / فودافون كاش':'💵 الدفع عند الاستلام';
   const msg=buildReceipt(oid,nm,ph,ad,it,tot,payLbl,notes);
   window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank');
+  // back end ===
+  fetch('https://tayyar-8dc9c-default-rtdb.firebaseio.com/orders.json', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+        name: nm,
+        phone: ph,
+        address: ad,
+        brand: brand,
+        items: it,
+        orderTotal: tot,
+        delivery: getDeliveryFee(ad),
+        service: SERVICE_FEE,
+        grandTotal: tot + getDeliveryFee(ad) + SERVICE_FEE,
+        payment: pay,
+        orderNum: oid,
+        notes: notes,
+        timestamp: Date.now(),
+        status: 'جديد'
+    })
+});
+// back end ===
   showSuccess();
 }
 
