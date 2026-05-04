@@ -288,7 +288,7 @@ function buildReceipt(oid, nm, ph, ad, it, tot, payLbl, notes) {
     onlinePayment,
     notes ? `\n📝 *ملاحظات:* ${notes}` : '',
     divider,
-    `⏱️ جاهز خلال *45 - 60 دقيقة*\n${border}║ شكراً لثقتك في طيار✈️  ║\n╚══════════════════╝`,
+    `⏱️ جاهز خلال *25 - 45 دقيقة*\n${border}║ شكراً لثقتك في طيار✈️  ║\n╚══════════════════╝`,
   ].filter(Boolean).join('\n');
 }
 
@@ -367,7 +367,7 @@ function showSuccess(nm){
   document.getElementById('done-circle').style.display='none';
   document.getElementById('sw-title').textContent='تم إرسال طلبك! 🎉';
   document.getElementById('sw-msg').textContent='تم فتح واتساب برسالة طلبك الكامل';
-  document.getElementById('timing-badge').textContent='⏱️ طلبك سيكون جاهز خلال 45 - 60 دقيقة';
+  document.getElementById('timing-badge').textContent='⏱️ طلبك سيكون جاهز خلال 25 - 45 دقيقة';
   // After 65 seconds show delivered (for demo, use 65000ms)
   // In real use this would be much longer - using 70*60*1000 = 70 min
   // For demo we use 8 seconds
