@@ -259,7 +259,7 @@ input:checked + label .checkmark{
 .promo-ticker-track {
   display: inline-block;
   white-space: nowrap;
-  animation: promoTicker 10s linear infinite;
+  animation: promoTicker 4s linear infinite;
 }
 
 .promo-ticker-track span {
@@ -272,7 +272,7 @@ input:checked + label .checkmark{
   white-space: nowrap;
 }
 
-@keyframes promoTicker {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-16.6667%); }
-}
+/* @keyframes promoTicker { */
+  /* 0%   { transform: translateX(1); } */
+  /* 100% { transform: translateX(-16.6667%); } */
+/* } */
