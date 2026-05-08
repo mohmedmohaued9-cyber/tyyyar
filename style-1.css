@@ -243,3 +243,34 @@ input:checked + label .checkmark{
 .srch-icon{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--tx3);pointer-events:none;font-size:18px;}
 .srch-clear{position:absolute;left:14px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--tx3);font-size:18px;display:none;}
 .no-results{text-align:center;padding:40px 20px;color:var(--tx2);font-size:15px;}
+.promo-ticker-wrap {
+  width: 100%;
+  background: #fff3e0;        /* بيج فاتح يتناسب مع الأبيض */
+  border-top: 2px solid #ff6f00;
+  border-bottom: 2px solid #ff6f00;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 8px 0;
+  box-sizing: border-box;
+  /* يمنعها من الطلوع بره */
+  max-width: 100%;
+}
+
+.promo-ticker-track {
+  display: inline-block;
+  animation: promoTicker 8s linear infinite;
+}
+
+.promo-ticker-track span {
+  display: inline-block;
+  padding: 0 50px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff6f00;
+  direction: rtl;
+}
+
+@keyframes promoTicker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-16.6667%); }
+}
