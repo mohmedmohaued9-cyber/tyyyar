@@ -259,7 +259,7 @@ input:checked + label .checkmark{
 .promo-ticker-track {
   display: inline-block;
   white-space: nowrap;
-  animation: promoTicker 4s linear infinite;
+  animation: promoTicker 5s linear infinite;
 }
 
 .promo-ticker-track span {
