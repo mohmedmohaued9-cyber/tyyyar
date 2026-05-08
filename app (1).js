@@ -630,3 +630,24 @@ function installApp(){if(!dP)return;dP.prompt();dP.userChoice.then(()=>{dP=null;
 if(/iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase())&&!window.navigator.standalone){
   setTimeout(()=>document.getElementById('ib').style.display='flex',5000);
 }
+// حط الكود ده في آخر السكريبت بتاعك
+(function initMarquee() {
+  const track = document.getElementById('announcementTrack');
+  if (!track) return;
+
+  // نحفظ المحتوى الأصلي
+  const originalHTML = track.innerHTML;
+
+  // نكرره كفاية علشان يملا أي شاشة
+  track.innerHTML = originalHTML + originalHTML + originalHTML;
+
+  // بعد ما الـ DOM يتشكل نقيس العرض الفعلي لنسخة واحدة
+  requestAnimationFrame(() => {
+    const singleWidth = track.scrollWidth / 3; // 3 لأننا كررنا 3 مرات
+    const speed = 40; // بكسل في الثانية — زود لو عايزه أسرع
+    const duration = singleWidth / speed;
+
+    track.style.setProperty('--ann-move', `-${singleWidth}px`);
+    track.style.animation = `ann-scroll ${duration}s linear infinite`;
+  });
+})();
