@@ -245,20 +245,21 @@ input:checked + label .checkmark{
 .no-results{text-align:center;padding:40px 20px;color:var(--tx2);font-size:15px;}
 .promo-ticker-wrap {
   width: 100%;
-  background: #fff3e0;        /* بيج فاتح يتناسب مع الأبيض */
+  background: #fff3e0;
   border-top: 2px solid #ff6f00;
   border-bottom: 2px solid #ff6f00;
   overflow: hidden;
   white-space: nowrap;
   padding: 8px 0;
   box-sizing: border-box;
-  /* يمنعها من الطلوع بره */
   max-width: 100%;
+  display: block;
 }
 
 .promo-ticker-track {
   display: inline-block;
-  animation: promoTicker 8s linear infinite;
+  white-space: nowrap;
+  animation: promoTicker 10s linear infinite;
 }
 
 .promo-ticker-track span {
@@ -266,8 +267,9 @@ input:checked + label .checkmark{
   padding: 0 50px;
   font-size: 20px;
   font-weight: bold;
-  color: #ff6f00;
+  color: #e65100;
   direction: rtl;
+  white-space: nowrap;
 }
 
 @keyframes promoTicker {
