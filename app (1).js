@@ -238,7 +238,7 @@ const brandEmojis={'Bazooka':'🍗','Karam El Sham':'🥙','B Laban':'🍮','Wah
 
 function getDeliveryFee(address) {
   const ad = address.toLowerCase();
- if (!ad) return 40; // سعر افتراضي لو العنوان فارغ
+ if (!ad) return 45; // سعر افتراضي لو العنوان فارغ
 
   // 1. حي الأندلس (سعر ثابت ومميز)
   if (ad.includes('الاندلس') || ad.includes('اندلس')) return 70;
@@ -262,7 +262,7 @@ function getDeliveryFee(address) {
     }
   }
 
-  return 40; // سعر افتراضي للعناوين غير المطابقة للقوائم أعلاه
+  return 45; // سعر افتراضي للعناوين غير المطابقة للقوائم أعلاه
  
 }
 function buildReceipt(oid, nm, ph, ad, it, tot, payLbl, notes) {
@@ -324,6 +324,8 @@ function placeOrder(){
   const oid='TYR-'+String(seq).padStart(4,'0');
   const payLbl=pay==='online'?'📲 انستاباي / فودافون كاش':'💵 الدفع عند الاستلام';
   const msg=buildReceipt(oid,nm,ph,ad,it,tot,payLbl,notes);
+  
+  fbq('track', 'InitiateCheckout');
   window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank');
   // back end ===
   fetch('https://tayyar-8dc9c-default-rtdb.firebaseio.com/orders.json', {
@@ -396,7 +398,7 @@ function showSuccess(nm){
     document.getElementById('sw-msg').textContent=`شكراً ${nm || ''} على ثقتك في طيار 🚀`;
     document.getElementById('timing-badge').style.background='linear-gradient(135deg,#25d366,#128c7e)';
     document.getElementById('timing-badge').textContent='✅ تم التوصيل بنجاح!';
-  }, 75*65*1000); // 70 minutes
+  }, 60*84*1000); // 70 minutes
 }
 
 function resetAll(){
@@ -558,7 +560,7 @@ _تم الإرسال من تطبيق طيار_ 🛵`;
 
  const waNum=WA;
  
-
+fbq('track', 'InitiateCheckout');
   window.open(`https://wa.me/${waNum}?text=${encodeURIComponent(msg)}`,'_blank');
   showOtherSuccess();
 }
@@ -630,24 +632,3 @@ function installApp(){if(!dP)return;dP.prompt();dP.userChoice.then(()=>{dP=null;
 if(/iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase())&&!window.navigator.standalone){
   setTimeout(()=>document.getElementById('ib').style.display='flex',5000);
 }
-// حط الكود ده في آخر السكريبت بتاعك
-(function initMarquee() {
-  const track = document.getElementById('announcementTrack');
-  if (!track) return;
-
-  // نحفظ المحتوى الأصلي
-  const originalHTML = track.innerHTML;
-
-  // نكرره كفاية علشان يملا أي شاشة
-  track.innerHTML = originalHTML + originalHTML + originalHTML;
-
-  // بعد ما الـ DOM يتشكل نقيس العرض الفعلي لنسخة واحدة
-  requestAnimationFrame(() => {
-    const singleWidth = track.scrollWidth / 3; // 3 لأننا كررنا 3 مرات
-    const speed = 40; // بكسل في الثانية — زود لو عايزه أسرع
-    const duration = singleWidth / speed;
-
-    track.style.setProperty('--ann-move', `-${singleWidth}px`);
-    track.style.animation = `ann-scroll ${duration}s linear infinite`;
-  });
-})();

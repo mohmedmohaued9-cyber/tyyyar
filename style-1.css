@@ -243,6 +243,7 @@ input:checked + label .checkmark{
 .srch-icon{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--tx3);pointer-events:none;font-size:18px;}
 .srch-clear{position:absolute;left:14px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--tx3);font-size:18px;display:none;}
 .no-results{text-align:center;padding:40px 20px;color:var(--tx2);font-size:15px;}
+
 .promo-ticker-wrap {
   width: 100%;
   background: #fff3e0;
@@ -250,7 +251,7 @@ input:checked + label .checkmark{
   border-bottom: 2px solid #ff6f00;
   overflow: hidden;
   white-space: nowrap;
-  padding: 8px 0;
+  padding: 4px 0;
   box-sizing: border-box;
   max-width: 100%;
   display: block;
@@ -259,7 +260,7 @@ input:checked + label .checkmark{
 .promo-ticker-track {
   display: inline-block;
   white-space: nowrap;
-  animation: promoTicker 8s linear infinite;
+  animation: promoTicker 10s linear infinite;
 }
 
 .promo-ticker-track span {
