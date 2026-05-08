@@ -214,8 +214,16 @@ function getLoc(){
       h.style.color='var(--grn)';h.textContent='✅ تم تحديد الموقع بنجاح';
       toast('📍 تم تحديد الموقع!');
     },
-    ()=>{btn.disabled=false;if(icon) icon.innerHTML='<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#dc2626"/>';h.style.color='#dc2626';h.textContent='❌ تعذّر الموقع، تأكد من الإذن';}
-    ,{enableHighAccuracy:true,timeout:10000}
+err=>{
+  btn.disabled=false;
+  if(icon) icon.innerHTML='<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#dc2626"/>';
+  h.style.color='#dc2626';
+  if(err.code===1){
+    h.innerHTML='❌ تم رفض الإذن<br><small style="font-size:11px;color:#7a6a54">افتح إعدادات المتصفح ← الموقع ← اسمح لهذا الموقع، ثم اضغط مجدداً</small>';
+  } else {
+    h.innerHTML='❌ تعذّر الموقع<br><small style="font-size:11px;color:#7a6a54">تأكد إن الـ GPS شغال ثم اضغط مجدداً</small>';
+  }
+}
   );
 }
 
