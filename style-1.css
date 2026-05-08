@@ -254,27 +254,25 @@ input:checked + label .checkmark{
   box-sizing: border-box;
   max-width: 100%;
   display: block;
-
 }
 
 .promo-ticker-track {
-  display: inline-flex;
+  display: inline-block;
   white-space: nowrap;
-  animation: bar-scroll 10s linear infinite;
-  gap: 20px;
+  animation: promoTicker 10s linear infinite;
 }
 
 .promo-ticker-track span {
   display: inline-block;
   padding: 0 50px;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
   color: #e65100;
   direction: rtl;
   white-space: nowrap;
 }
 
-@keyframes bar-scroll {
+@keyframes promoTicker {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-16.6667%); }
 }
