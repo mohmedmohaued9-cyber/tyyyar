@@ -630,29 +630,3 @@ function installApp(){if(!dP)return;dP.prompt();dP.userChoice.then(()=>{dP=null;
 if(/iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase())&&!window.navigator.standalone){
   setTimeout(()=>document.getElementById('ib').style.display='flex',5000);
 }
-// الشريط المتحرك⃁===
-function fixTicker() {
-  const track = document.querySelector('.promo-ticker-track');
-  if (!track) return;
-
-  const oneSpanWidth = track.scrollWidth / 6;
-
-  // حقن الـ keyframe ديناميكي بالـ pixel
-  const styleId = 'ticker-dynamic-style';
-  let styleEl = document.getElementById(styleId);
-  if (!styleEl) {
-    styleEl = document.createElement('style');
-    styleEl.id = styleId;
-    document.head.appendChild(styleEl);
-  }
-
-  styleEl.textContent = `
-    @keyframes promoTicker {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-${oneSpanWidth}px); }
-    }
-  `;
-}
-
-document.addEventListener('DOMContentLoaded', fixTicker);
-window.addEventListener('resize', fixTicker);
