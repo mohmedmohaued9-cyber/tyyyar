@@ -211,7 +211,7 @@ function getLoc(){
       ⚠️ متصفح فيسبوك لا يدعم تحديد الموقع تلقائياً<br>
       <small style="font-size:12px;color:#555;line-height:1.8;display:block;margin-top:6px">
         ١. اضغط <b>النقاط الثلاث ⋮</b> أعلى الشاشة<br>
-        ٢. اختر <b>"افتح في المتصفح"</b><br>
+        ٢. اختر <b>" فتح في متصفح خارجي "</b><br>
         ─── أو ───<br>
         <span style="color:#1e7a45;font-weight:700">اكتب عنوانك في خانة العنوان وابعت طلبك عادي، وهنتواصل معاك بخصوص الموقع 😊</span>
       </small>`;
@@ -236,7 +236,7 @@ function getLoc(){
       if(icon) icon.innerHTML='<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#dc2626"/>';
       h.style.color='#dc2626';
       if(err.code===1){
-        h.innerHTML='❌ تم رفض الإذن<br><small style="font-size:11px;color:#7a6a54">افتح إعدادات المتصفح ← الموقع ← اسمح لهذا الموقع، ثم اضغط مجدداً</small>';
+        h.innerHTML='❌ تم رفض الإذن<br><small style="font-size:11px;color:#7a6a54">افتح  ← الموقع </small>';
       } else {
         h.innerHTML='❌ تعذّر الموقع<br><small style="font-size:11px;color:#7a6a54">تأكد إن الـ GPS شغال ثم اضغط مجدداً</small>';
       }
