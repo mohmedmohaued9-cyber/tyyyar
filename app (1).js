@@ -207,7 +207,14 @@ function getLoc(){
   if(isFB){
     h.style.display='block';
     h.style.color='#dc2626';
-    h.innerHTML='⚠️ متصفح فيسبوك لا يدعم تحديد الموقع<br><button onclick="window.open(location.href,\'_blank\')" style="margin-top:8px;padding:6px 14px;background:#e8742a;color:#fff;border:none;border-radius:8px;font-family:Tajawal;font-weight:700;font-size:13px;cursor:pointer">🌐 افتح في المتصفح</button>';
+    h.innerHTML=`
+      ⚠️ متصفح فيسبوك لا يدعم تحديد الموقع تلقائياً<br>
+      <small style="font-size:12px;color:#555;line-height:1.8;display:block;margin-top:6px">
+        ١. اضغط <b>النقاط الثلاث ⋮</b> أعلى الشاشة<br>
+        ٢. اختر <b>"افتح في المتصفح"</b><br>
+        ─── أو ───<br>
+        <span style="color:#1e7a45;font-weight:700">اكتب عنوانك في خانة العنوان وابعت طلبك عادي، وهنتواصل معاك بخصوص الموقع 😊</span>
+      </small>`;
     return;
   }
 
