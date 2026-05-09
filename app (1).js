@@ -201,6 +201,16 @@ function setPay(t){
 
 function getLoc(){
   const btn=document.getElementById('bl'),h=document.getElementById('lh'),icon=document.getElementById('loc-icon');
+  
+  // ✅ فيسبوك براوزر
+  const isFB=navigator.userAgent.includes('FBAN')||navigator.userAgent.includes('FBAV');
+  if(isFB){
+    h.style.display='block';
+    h.style.color='#dc2626';
+    h.innerHTML='⚠️ متصفح فيسبوك لا يدعم تحديد الموقع<br><button onclick="window.open(location.href,\'_blank\')" style="margin-top:8px;padding:6px 14px;background:#e8742a;color:#fff;border:none;border-radius:8px;font-family:Tajawal;font-weight:700;font-size:13px;cursor:pointer">🌐 افتح في المتصفح</button>';
+    return;
+  }
+
   if(!navigator.geolocation){toast('المتصفح لا يدعم الموقع',1);return;}
   btn.disabled=true;
   if(icon) icon.innerHTML='<path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z" fill="#e8742a"/>';
@@ -214,16 +224,17 @@ function getLoc(){
       h.style.color='var(--grn)';h.textContent='✅ تم تحديد الموقع بنجاح';
       toast('📍 تم تحديد الموقع!');
     },
-err=>{
-  btn.disabled=false;
-  if(icon) icon.innerHTML='<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#dc2626"/>';
-  h.style.color='#dc2626';
-  if(err.code===1){
-    h.innerHTML='❌ تم رفض الإذن<br><small style="font-size:11px;color:#7a6a54">افتح إعدادات المتصفح ← الموقع ← اسمح لهذا الموقع، ثم اضغط مجدداً</small>';
-  } else {
-    h.innerHTML='❌ تعذّر الموقع<br><small style="font-size:11px;color:#7a6a54">تأكد إن الـ GPS شغال ثم اضغط مجدداً</small>';
-  }
-}
+    err=>{
+      btn.disabled=false;
+      if(icon) icon.innerHTML='<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#dc2626"/>';
+      h.style.color='#dc2626';
+      if(err.code===1){
+        h.innerHTML='❌ تم رفض الإذن<br><small style="font-size:11px;color:#7a6a54">افتح إعدادات المتصفح ← الموقع ← اسمح لهذا الموقع، ثم اضغط مجدداً</small>';
+      } else {
+        h.innerHTML='❌ تعذّر الموقع<br><small style="font-size:11px;color:#7a6a54">تأكد إن الـ GPS شغال ثم اضغط مجدداً</small>';
+      }
+    }
+    ,{enableHighAccuracy:true,timeout:10000}
   );
 }
 
