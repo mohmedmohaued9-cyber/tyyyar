@@ -279,12 +279,12 @@ function getDeliveryFee(address) {
 
     if (isMajawara) {
       // المجاورات (تم ترتيب الشروط من الأعلى للأقل لتجنب تداخل الأرقام 30 و 66)
-      if (num >= 66 && num <= 79) return 50;
+      if (num >= 66 && num <= 79) return 45;
       if (num >= 30 && num < 66)  return 40;
       if (num >= 1  && num < 30)  return 35;
     } else {
       // الأحياء (من 10 لـ 20 السعر واحد، تم دمج الفترتين)
-      if (num >= 10 && num <= 20) return 50;
+      if (num >= 10 && num <= 20) return 45;
     }
   }
 
