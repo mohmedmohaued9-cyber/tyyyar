@@ -288,6 +288,8 @@ const MENU=[
   { id: 263, brand: 'Karam El Sham', n: 'وجبه شيش وكفته', d: 'مشويات', p: 200, img: './img/logo karm alshm 2.jpeg' },
    // كرم الشام=====
   //  بلبن===
+  { id: 767, brand: 'B Laban', n: '  المتكندره', e:'بلبن', d: 'حلوى', p: 165, img: './img//المتكندره.webp' },
+ { id: 768, brand: 'B Laban', n: '  المتكندره حجم اكبر', e:'بلبن', d: 'حلوى', p: 380, img: './img//المتكندره.webp' },
   { id: 264, brand: 'B Laban', n: 'شوكيز جرة', e:'بلبن', d: 'حلوى', p: 45, img: './img/شوكيز.jpeg' },
   { id: 265, brand: 'B Laban', n: 'شوكيز ٢ قطع',    e:'بلبن',  d: 'حلوى', p: 20, img: './img/شوكيز.jpeg' },
   { id: 266, brand: 'B Laban', n: 'هبة دبي كيندر',  e:'بلبن',   d: 'حلوى', p: 130, img: './img/هبة دبي.jpeg' },
